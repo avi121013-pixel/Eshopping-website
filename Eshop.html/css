@@ -1,0 +1,1259 @@
+`html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIBE MART | Shop Your Vibe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f7ff;
+    color: #19152c;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+    width: 100%;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span, footer span {
+    color: #ff4f36;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #302b43;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #ff4f36;
+}
+
+.cart {
+    background: #211b3b;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cart:hover {
+    background: #ff4f36;
+    transform: scale(1.05);
+}
+
+/* HERO */
+.hero {
+    min-height: 580px;
+    background: linear-gradient(120deg,#ded5ff,#ffe0d6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 65px max(calc((100% - 1150px)/2), 5%);
+    gap: 35px;
+    overflow: hidden;
+}
+
+.hero-content {
+    animation: slideLeft .8s ease both;
+    max-width: 550px;
+}
+
+.tag {
+    display: inline-block;
+    background: white;
+    padding: 9px 18px;
+    border-radius: 30px;
+    color: #ff4f36;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px,6vw,78px);
+    line-height: 1.02;
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #ff4f36;
+}
+
+.hero p {
+    margin: 23px 0;
+    color: #514b65;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.shop-btn {
+    display: inline-block;
+    background: #211b3b;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-weight: 700;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.shop-btn:hover {
+    background: #ff4f36;
+    transform: translateY(-5px);
+}
+
+.hero-image img {
+    width: 420px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 35px;
+    transform: rotate(3deg);
+    border: 8px solid white;
+    box-shadow: 0 25px 50px #40315b35;
+    transition: .4s;
+}
+
+.hero-image img:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+/* ANIMATIONS */
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-image {
+    animation: slideRight .9s ease both;
+}
+
+/* MARQUEE */
+.marquee {
+    background: #ff4f36;
+    color: white;
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.marquee div {
+    display: inline-block;
+    animation: moveText 18s linear infinite;
+}
+
+@keyframes moveText {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 6%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.heading small {
+    color: #ff4f36;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.heading h2 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+/* CATEGORIES */
+.category-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.category-card {
+    min-height: 260px;
+    border-radius: 25px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-12px);
+}
+
+.category-card h3 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.category-card p {
+    margin-top: 10px;
+    color: #514b65;
+}
+
+.category-card .emoji {
+    font-size: 75px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    transition: .4s;
+}
+
+.category-card:hover .emoji {
+    transform: rotate(-15deg) scale(1.2);
+}
+
+.c1 { background: #ffddd5; }
+.c2 { background: #d9f6dd; }
+.c3 { background: #e3ddff; }
+
+.category-card.active-category {
+    outline: 4px solid #ff4f36;
+}
+
+/* PRODUCTS */
+.products {
+    background: white;
+}
+
+.product-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+
+.product-card {
+    background: #faf9ff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .35s;
+    animation: slideUp .7s ease both;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px #211b3b18;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.07);
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info small {
+    color: #ff4f36;
+    font-weight: 800;
+}
+
+.product-info h3 {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #211b3b;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.add-btn:hover {
+    background: #ff4f36;
+}
+
+.product-card[hidden] {
+    display: none;
+}
+
+/* OFFER */
+.offer {
+    background: linear-gradient(120deg,#211b3b,#59438d);
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    margin: 70px 6%;
+    padding: 65px 20px;
+}
+
+.offer h2 {
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.offer span {
+    color: #ff9078;
+}
+
+.offer p {
+    margin: 15px 0 25px;
+    color: #ddd;
+}
+
+/* FOOTER */
+footer {
+    background: #171329;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #aaa;
+    margin-top: 12px;
+}
+
+/* CART MODAL */
+.cart-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,10,30,.7);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.cart-modal.active {
+    display: flex;
+}
+
+.cart-box {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 22px;
+    padding: 25px;
+    animation: slideUp .3s ease;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-cart {
+    border: none;
+    background: #ffe2dc;
+    color: #ff4f36;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.cart-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item-info h4 {
+    font-size: 15px;
+}
+
+.cart-item-info p {
+    color: #ff4f36;
+    font-weight: 800;
+    margin-top: 5px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.quantity-controls button {
+    border: none;
+    background: #eeeaff;
+    padding: 5px 11px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.remove-item {
+    border: none;
+    background: none;
+    color: #ff4f36;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    font-weight: 900;
+    padding: 20px 0;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #211b3b;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.checkout-btn:hover {
+    background: #ff4f36;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 35px 10px;
+    color: #777;
+}
+
+/* TOAST MESSAGE */
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #211b3b;
+    color: white;
+    padding: 15px 22px;
+    border-radius: 12px;
+    z-index: 1100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .3s;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: min(420px,85vw);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+@media(max-width:600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        order: 3;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-image img {
+        height: 270px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 15px;
+    }
+
+    .heading h2 {
+        font-size: 30px;
+    }
+
+    .offer h2 {
+        font-size: 32px;
+    }
+
+    .cart-box {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+<nav class="navbar">
+
+    <div class="logo">VIBE<span>MART.</span></div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <button class="cart" id="cartButton">
+        🛒 Cart (0)
+    </button>
+
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="tag">✦ TRENDY. FRESH. AFFORDABLE.</span>
+
+        <h1>
+            SHOP YOUR<br>
+            <span>OWN VIBE.</span>
+        </h1>
+
+        <p>
+            From drip-worthy fits to fresh groceries
+            and aesthetic stationery. Everything
+            you love, all in one place.
+        </p>
+
+        <a href="#products" class="shop-btn">
+            Let's Shop ↗
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <img
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900"
+        alt="Shopping store">
+    </div>
+
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+    <div>
+        ✦ GOOD VIBES ONLY ✦ SHOP MORE ✦ LIVE MORE
+        ✦ FASHION ✦ FRESH GROCERIES ✦ STATIONERY
+        ✦ GOOD VIBES ONLY ✦ SHOP MORE ✦ LIVE MORE
+        ✦ FASHION ✦ FRESH GROCERIES ✦ STATIONERY
+    </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+
+    <div class="heading">
+        <small>EXPLORE YOUR VIBE</small>
+        <h2>What's Your Mood? ✨</h2>
+        <p style="margin-top:10px;color:#777;">
+            Click a category to explore products.
+        </p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card c1" data-category="FASHION">
+            <h3>Fashion</h3>
+            <p>Wear your confidence.</p>
+            <div class="emoji">👕</div>
+        </div>
+
+        <div class="category-card c2" data-category="GROCERIES">
+            <h3>Groceries</h3>
+            <p>Freshness in every bite.</p>
+            <div class="emoji">🥑</div>
+        </div>
+
+        <div class="category-card c3" data-category="STATIONERY">
+            <h3>Stationery</h3>
+            <p>Make your ideas happen.</p>
+            <div class="emoji">📚</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+
+    <div class="heading">
+        <small>THE GOOD STUFF</small>
+        <h2>Trending Right Now 🔥</h2>
+        <p style="margin-top:10px;color:#777;">
+            Discover products you will love.
+        </p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card" data-category="FASHION">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="Classic T-shirt">
+            <div class="product-info">
+                <small>FASHION</small>
+                <h3>Classic T-Shirt</h3>
+                <div class="price">₹499</div>
+                <button class="add-btn">+ Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="GROCERIES">
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500" alt="Fresh apples">
+            <div class="product-info">
+                <small>GROCERIES</small>
+                <h3>Fresh Apples</h3>
+                <div class="price">₹120</div>
+                <button class="add-btn">+ Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="STATIONERY">
+            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=500" alt="Notebook">
+            <div class="product-info">
+                <small>STATIONERY</small>
+                <h3>Aesthetic Notebook</h3>
+                <div class="price">₹150</div>
+                <button class="add-btn">+ Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="FASHION">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500" alt="Denim jeans">
+            <div class="product-info">
+                <small>FASHION</small>
+                <h3>Denim Jeans</h3>
+                <div class="price">₹999</div>
+                <button class="add-btn">+ Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:30px;">
+        <button class="shop-btn" id="showAll">
+            Show All Products ↗
+        </button>
+    </div>
+
+</section>
+
+<!-- OFFER -->
+<div class="offer">
+
+    <h2>YOUR VIBE.<br><span>YOUR STYLE.</span></h2>
+
+    <p>Everything you need. One iconic destination.</p>
+
+    <a href="#categories" class="shop-btn">
+        Explore Now ↗
+    </a>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="about">
+
+    <h2>VIBE<span>MART.</span></h2>
+
+    <p>Good products. Great prices. Better vibes.</p>
+
+    <p>© 2026 VibeMart. All Rights Reserved.</p>
+
+</footer>
+
+<!-- SHOPPING CART MODAL -->
+<div class="cart-modal" id="cartModal">
+
+    <div class="cart-box">
+
+        <div class="cart-header">
+            <h2>🛒 Your Shopping Cart</h2>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="totalPrice">₹0</span>
+        </div>
+
+        <button class="checkout-btn" id="checkoutButton">
+            Proceed to Checkout →
+        </button>
+
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+
+// =================================
+// VIBE MART SHOPPING SYSTEM
+// =================================
+
+// LOAD SAVED CART
+
+let cart = {};
+
+try {
+    const savedCart = JSON.parse(
+        localStorage.getItem("vibeMartCart")
+    );
+
+    if (savedCart && typeof savedCart === "object" &&
+        !Array.isArray(savedCart)) {
+        cart = savedCart;
+    }
+} catch (error) {
+    cart = {};
+}
+
+// SELECT ELEMENTS
+
+const cartButton = document.getElementById("cartButton");
+const cartModal = document.getElementById("cartModal");
+const closeCart = document.getElementById("closeCart");
+const cartItems = document.getElementById("cartItems");
+const totalPrice = document.getElementById("totalPrice");
+const checkoutButton = document.getElementById("checkoutButton");
+const toast = document.getElementById("toast");
+
+// FORMAT PRICE
+
+function formatPrice(amount) {
+    return "₹" + amount.toLocaleString("en-IN");
+}
+
+// SHOW MESSAGE
+
+let toastTimer;
+
+function showToast(message) {
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2200);
+
+}
+
+// SAVE CART
+
+function saveCart() {
+
+    localStorage.setItem(
+        "vibeMartCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+// UPDATE CART COUNT
+
+function updateCartCount() {
+
+    const count = Object.values(cart).reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
+
+    cartButton.textContent = `🛒 Cart (${count})`;
+
+}
+
+// ADD PRODUCTS TO CART
+
+document.querySelectorAll(".product-card").forEach(card => {
+
+    const button = card.querySelector(".add-btn");
+
+    button.addEventListener("click", () => {
+
+        const name = card.querySelector("h3").textContent;
+
+        const price = Number(
+            card.querySelector(".price")
+                .textContent.replace(/[₹,]/g, "")
+        );
+
+        const image = card.querySelector("img").src;
+
+        if (cart[name]) {
+
+            cart[name].quantity++;
+
+        } else {
+
+            cart[name] = {
+                name: name,
+                price: price,
+                image: image,
+                quantity: 1
+            };
+
+        }
+
+        saveCart();
+        updateCartCount();
+
+        button.textContent = "✓ Added!";
+
+        showToast("🎉 " + name + " added to cart!");
+
+        setTimeout(() => {
+            button.textContent = "+ Add to Cart";
+        }, 1000);
+
+    });
+
+});
+
+// DISPLAY CART
+
+function renderCart() {
+
+    cartItems.replaceChildren();
+
+    let total = 0;
+
+    const entries = Object.entries(cart);
+
+    if (entries.length === 0) {
+
+        const empty = document.createElement("div");
+
+        empty.className = "empty-cart";
+        empty.textContent = "🛍️ Your cart is empty! Start shopping.";
+
+        cartItems.appendChild(empty);
+
+    }
+
+    entries.forEach(([name, item]) => {
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        const image = document.createElement("img");
+        image.src = item.image;
+        image.alt = name;
+
+        const info = document.createElement("div");
+        info.className = "cart-item-info";
+
+        const title = document.createElement("h4");
+        title.textContent = name;
+
+        const price = document.createElement("p");
+        price.textContent = formatPrice(
+            item.price * item.quantity
+        );
+
+        const controls = document.createElement("div");
+        controls.className = "quantity-controls";
+
+        const minus = document.createElement("button");
+        minus.textContent = "−";
+        minus.dataset.action = "decrease";
+        minus.dataset.name = name;
+        minus.setAttribute("aria-label", "Decrease quantity");
+
+        const quantity = document.createElement("span");
+        quantity.textContent = item.quantity;
+
+        const plus = document.createElement("button");
+        plus.textContent = "+";
+        plus.dataset.action = "increase";
+        plus.dataset.name = name;
+        plus.setAttribute("aria-label", "Increase quantity");
+
+        controls.append(minus, quantity, plus);
+
+        info.append(title, price, controls);
+
+        const remove = document.createElement("button");
+        remove.className = "remove-item";
+        remove.textContent = "🗑️";
+        remove.dataset.action = "remove";
+        remove.dataset.name = name;
+        remove.setAttribute("aria-label", "Remove " + name);
+
+        row.append(image, info, remove);
+
+        cartItems.appendChild(row);
+
+        total += item.price * item.quantity;
+
+    });
+
+    totalPrice.textContent = formatPrice(total);
+
+    updateCartCount();
+
+}
+
+// CART BUTTON
+
+cartButton.addEventListener("click", () => {
+
+    renderCart();
+    cartModal.classList.add("active");
+
+});
+
+// CLOSE CART
+
+closeCart.addEventListener("click", () => {
+
+    cartModal.classList.remove("active");
+
+});
+
+cartModal.addEventListener("click", (event) => {
+
+    if (event.target === cartModal) {
+        cartModal.classList.remove("active");
+    }
+
+});
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+        cartModal.classList.remove("active");
+    }
+
+});
+
+// INCREASE, DECREASE AND REMOVE PRODUCTS
+
+cartItems.addEventListener("click", (event) => {
+
+    const button = event.target.closest("button[data-action]");
+
+    if (!button) return;
+
+    const name = button.dataset.name;
+    const action = button.dataset.action;
+
+    if (!cart[name]) return;
+
+    if (action === "increase") {
+
+        cart[name].quantity++;
+
+    }
+
+    else if (action === "decrease") {
+
+        cart[name].quantity--;
+
+        if (cart[name].quantity <= 0) {
+            delete cart[name];
+        }
+
+    }
+
+    else if (action === "remove") {
+
+        delete cart[name];
+        showToast("Product removed from cart!");
+
+    }
+
+    saveCart();
+    renderCart();
+
+});
+
+// CATEGORY FILTERING
+
+document.querySelectorAll(".category-card").forEach(category => {
+
+    category.addEventListener("click", () => {
+
+        const selectedCategory = category.dataset.category;
+
+        const alreadyActive =
+            category.classList.contains("active-category");
+
+        document.querySelectorAll(".category-card").forEach(card => {
+            card.classList.remove("active-category");
+        });
+
+        if (alreadyActive) {
+
+            document.querySelectorAll(".product-card").forEach(product => {
+                product.hidden = false;
+            });
+
+            showToast("Showing all products");
+
+        } else {
+
+            category.classList.add("active-category");
+
+            document.querySelectorAll(".product-card").forEach(product => {
+
+                product.hidden =
+                    product.dataset.category !== selectedCategory;
+
+            });
+
+            document.getElementById("products").scrollIntoView({
+                behavior: "smooth"
+            });
+
+            showToast("Showing " + selectedCategory.toLowerCase());
+
+        }
+
+    });
+
+});
+
+// SHOW ALL PRODUCTS
+
+document.getElementById("showAll").addEventListener("click", () => {
+
+    document.querySelectorAll(".product-card").forEach(product => {
+        product.hidden = false;
+    });
+
+    document.querySelectorAll(".category-card").forEach(category => {
+        category.classList.remove("active-category");
+    });
+
+    showToast("All products are now visible!");
+
+});
+
+// CHECKOUT DEMO
+
+checkoutButton.addEventListener("click", () => {
+
+    const items = Object.values(cart);
+
+    if (items.length === 0) {
+
+        showToast("Your cart is empty!");
+
+        return;
+
+    }
+
+    const total = items.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
+    const itemCount = items.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+    );
+
+    const confirmed = confirm(
+        "🎉 VIBE MART - ORDER SUMMARY\n\n" +
+        "Total Products: " + itemCount +
+        "\nTotal Amount: " + formatPrice(total) +
+        "\n\nConfirm your demo order?"
+    );
+
+    if (confirmed) {
+
+        alert(
+            "🎊 CONGRATULATIONS!\n\n" +
+            "Your demo order has been placed successfully!\n\n" +
+            "Total Amount: " + formatPrice(total) +
+            "\n\nThank you for shopping with VIBE MART!"
+        );
+
+        cart = {};
+
+        saveCart();
+        renderCart();
+
+        cartModal.classList.remove("active");
+
+    }
+
+});
+
+// INITIALIZE WEBSITE
+
+updateCartCount();
+
+console.log("🔥 VIBE MART is ready!");
+
+</script>
+
+</body>
+</html>
+```
